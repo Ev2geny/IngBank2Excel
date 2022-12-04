@@ -46,19 +46,19 @@ def write_df_to_file(df:pd.DataFrame,
     filename = filename + "." + output_file_format
 
     if output_file_format == "xlsx":
-        writer = pd.ExcelWriter(filename, engine='xlsxwriter', datetime_format='dd.mm.yyyy HH:MM')
+        with pd.ExcelWriter(filename, engine='xlsxwriter', datetime_format='dd.mm.yyyy HH:MM') as writer:
 
-        df.to_excel(writer, sheet_name='data', index=False)
+            df.to_excel(writer, sheet_name='data', index=False)
 
-        workbook = writer.book
-        info_worksheet = workbook.add_worksheet('Info')
+            workbook = writer.book
+            info_worksheet = workbook.add_worksheet('Info')
 
-        info_worksheet.write('A3', f'The file is created by the tool"{version_info.NAME}", which is available for download from here {version_info.PERMANENT_LOCATION}')
-        info_worksheet.write('A4', f'Version: "{version_info.VERSION}"')
-        info_worksheet.write('A5', f'For extracting of the information the following extractor was used: "{extractor_name}"')
-        info_worksheet.write('A6', f'Errors during conversion: "{errors}"')
+            info_worksheet.write('A3', f'The file is created by the tool"{version_info.NAME}", which is available for download from here {version_info.PERMANENT_LOCATION}')
+            info_worksheet.write('A4', f'Version: "{version_info.VERSION}"')
+            info_worksheet.write('A5', f'For extracting of the information the following extractor was used: "{extractor_name}"')
+            info_worksheet.write('A6', f'Errors during conversion: "{errors}"')
 
-        writer.save()
+            # writer.save()
 
         print_message_about_file_creation(filename)
 
