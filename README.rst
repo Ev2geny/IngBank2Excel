@@ -2,20 +2,20 @@
 IngBank2Excel
 ==============
 
-Simple tool to create an Excel extract with the credic card transactions of the
+Simple tool to create an Excel extract with the credit card transactions of the
 `ING Bank (Netherlands) <https://www.ing.nl>`_.
 
 For whatever reason ING Bank `does not support
 <https://www.ing.nl/particulier/betalen/creditcards/mijn-creditcard/meer-weten/creditcard-afschrift-lezen.html>`_
-any downloadable statements on the credic card transactions. Not even in PDF
+any downloadable statements on the credit card transactions. Not even in PDF
 format, not to mention the CSV or Excel formats. This is despite the fact, that
-the functionality if definately needed and been requested from the ING Bank
+the functionality if definitely needed and has been requested from the ING Bank
 several times (e.g. see `facebook
 <https://www.facebook.com/INGnl/posts/waar-kan-ik-mijn-afschriften-van-de-ing-creditcard-downloaden/604751509571414/>`_
 and `klacht.nl
 <https://www.klacht.nl/downloaden-transactie-op-spaarrekening-en-creditcard-uitgaven/>`_) 
 
-The **IngBank2Excel**  (later in the text also reffered to as **the tool**)
+The **IngBank2Excel**  (later in the text also referred to as **the tool**)
 works around this limitation and allows to create an Excel
  or CSV file with all credit card transactions, available through the web
  interface of the ING bank.
@@ -44,7 +44,7 @@ Conversion
 ```````````````````````````````````````````````
 **Step 1.1** Login to the ING web with Google Chrome.
 
-**Step 1.2** Navigate to the credic cards section.
+**Step 1.2** Navigate to the credit cards section.
 
 **Result:**  The current period will be shown.
 
@@ -55,7 +55,7 @@ Conversion
 
 **Result:**  The previous period will be loaded as well.
 
-**Step 1.4** Repeat previous step to load as much prior periods as needed.
+**Step 1.4** Repeat previous step to load as many prior periods as needed.
 
 **Step 1.5** Right click anywhere on the web page and select **Save as..**.
 
@@ -68,9 +68,9 @@ Conversion
 .. image:: misc/chrome_select_file_type.png
    :alt: Chrome select file type
 
-**Step 1.7** Give the file a meaningfull name and save it.
+**Step 1.7** Give the file a meaningful name and save it.
 
-**Result:**  A file with the exetention .mhtml will be created.
+**Result:**  A file with the extension .mhtml will be created.
 
 **Step 2** Convert .mhtml to Excel
 ```````````````````````````````````
@@ -98,34 +98,34 @@ do not contain executable file for these OSs. One can either create such
 executables for these OSs or run the tool on these OSs directly from Python.
 
 
-My antivirus program attacs the tool.
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+My antivirus program attacks the tool. What can I do?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Antivirus programs attempt to detect viruses based on the algorithms, known
 only to them. Very often an antivirus would block anything unknown and/or
-suspecious. At the same time most of antivirus manufactures allow the
-suspiciouse file to be sent to them for more detailed investigation, after
-successfull completion of which they would white list the suspicious file in
-the next virus update definition. As an example the files for the Microsoft
+suspicious. At the same time most of antivirus manufactures allow the
+suspicious file to be sent to them for more detailed investigation, after
+successful completion of which they would white list the suspicious file in
+the next virus definitions update. As an example files for the Microsoft
 Defender need to be sent `here
-<https://www.microsoft.com/en-us/wdsi/filesubmission>`_, for the Symantec `here
-<https://symsubmit.symantec.com/>`_ The developer normally "agrees" the tool
+<https://www.microsoft.com/en-us/wdsi/filesubmission>`_, files for the Symantec `here
+<https://symsubmit.symantec.com/>`_. The developer normally "agrees" the tool
 with at least Microsoft Windows Defender.
 
 So, if your antivirus does not like the **IngBank2Excel** there are 2 options:
 
-* send the tool for investigation to the antivirus manufacture
+* send the tool for investigation to the antivirus manufacturer
 
-* inform the developer. The developer will need information about the antivirus you are using.
+* inform the developer. The developer will need information about the antivirus you are using
 
 Feedback
 --------------
 
-For issues reporting and/or enhancement requests is best to use the  `github functionality  <https://github.com/Ev2geny/IngBank2Excel/issues>`__
+For issues reporting and/or enhancement requests is best to use the  `github issues functionality  <https://github.com/Ev2geny/IngBank2Excel/issues>`__
 
-For general suebjects start a discussion
+For general subjects start a discussion
 `here <https://github.com/Ev2geny/IngBank2Excel/discussions>`__
 
-Or just email the developer: ev2geny at gmail.com
+In any case you can always email the developer: ev2geny at gmail.com
 
 Appendix
 ----------
@@ -146,7 +146,7 @@ To use the tool from the command line one has to use `IngBank2Excel.py </core/In
    options:
    -h, --help            show this help message and exit
    -o OUTPUT_EXCEL_FILE_NAME, --output OUTPUT_EXCEL_FILE_NAME
-                           Output file name (without extention), which will be created in excel or CSV format
+                           Output file name (without extension), which will be created in excel or CSV format
    -f {ING_CREDIT}, --format {ING_CREDIT}
                            Format of input file. If not provided, determined automatically
    -t {xlsx,csv}, --type {xlsx,csv}
@@ -155,5 +155,4 @@ To use the tool from the command line one has to use `IngBank2Excel.py </core/In
 
 At the moment `regular releases
 <https://github.com/Ev2geny/IngBank2Excel/releases/latest>`_ do not contain
-executable file for command line usage. One can either create such executables
-for these OSs or run the tool on these OSs directly from Python.
+executable **IngBank2Excel** file for command line usage. One can either create such executable or run the tool directly from Python.
