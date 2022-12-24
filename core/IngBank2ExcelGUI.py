@@ -61,7 +61,7 @@ def btn_convertFiles_clicked():
                                                   IngBank2Excel(file ) + '\n')
             qntFilesConverted=qntFilesConverted + 1
         except:
-            print('An error occured during conversion of the file "'+'file'+'" '+ str(sys.exc_info()[0]))
+            print('An error occured during conversion of the file "'+file+'" '+ str(sys.exc_info()[0]))
             print(traceback.format_exc())
             print('Skipping conversion of this file')
 
