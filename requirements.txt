@@ -1,0 +1,5 @@
+# Tested with python 3.10
+bs4
+pandas
+PyInstaller
+XlsxWriter

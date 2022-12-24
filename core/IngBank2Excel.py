@@ -104,7 +104,7 @@ def main():
 
     parser = argparse.ArgumentParser(description='Converting ING bank extracts to Excel')
     parser.add_argument('input_file_name', type=str, help='Input file name for conversion')
-    parser.add_argument('-o','--output', type=str, default=None, dest='output_Excel_file_name', help='Output file name (without extention), which will be created in excel or CSV format')
+    parser.add_argument('-o','--output', type=str, default=None, dest='output_Excel_file_name', help='Output file name (without extension), which will be created in excel or CSV format')
     parser.add_argument('-f', '--format', type=str,default='auto', dest='format', choices = extractors.get_list_extractors_in_text(),help = 'Format of input file. If not provided, determined automatically' )
     parser.add_argument('-t', '--type', type=str,default='xlsx', dest='output_file_type', choices = ["xlsx","csv"],help = 'Format of the output file to be created' )
 

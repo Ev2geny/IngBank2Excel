@@ -61,7 +61,7 @@ def btn_convertFiles_clicked():
                                                   IngBank2Excel(file ) + '\n')
             qntFilesConverted=qntFilesConverted + 1
         except:
-            print('An error occured during conversion of the file "'+'file'+'" '+ str(sys.exc_info()[0]))
+            print('An error occured during conversion of the file "'+file+'" '+ str(sys.exc_info()[0]))
             print(traceback.format_exc())
             print('Skipping conversion of this file')
 
@@ -77,7 +77,7 @@ help_about=Menu(menu)
 
 def help_about_clicked():
 
-    info_string = f'{version_info.NAME}\nVersion={version_info.VERSION}\nDeveloper={version_info.AUTHOR}\nWhere to download={version_info.PERMANENT_LOCATION}'
+    info_string = f'{version_info.NAME}\nVersion={version_info.VERSION}\nDeveloper={version_info.DEVELOPER}\nWhere to download={version_info.PERMANENT_LOCATION}'
     print(info_string)
     messagebox.showinfo('', info_string)
 
@@ -88,7 +88,7 @@ window.config(menu=menu)
  
 window.title(f'{version_info.NAME} Version={version_info.VERSION}')
  
-window.geometry('720x400')
+window.geometry('720x350')
  
 Label(window, text="""
 Step1: Select one or several files in format *.mhtml
