@@ -88,7 +88,7 @@ window.config(menu=menu)
  
 window.title(f'{version_info.NAME} Version={version_info.VERSION}')
  
-window.geometry('720x400')
+window.geometry('720x350')
  
 Label(window, text="""
 Step1: Select one or several files in format *.mhtml
