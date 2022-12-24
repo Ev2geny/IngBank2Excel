@@ -77,7 +77,7 @@ help_about=Menu(menu)
 
 def help_about_clicked():
 
-    info_string = f'{version_info.NAME}\nVersion={version_info.VERSION}\nDeveloper={version_info.AUTHOR}\nWhere to download={version_info.PERMANENT_LOCATION}'
+    info_string = f'{version_info.NAME}\nVersion={version_info.VERSION}\nDeveloper={version_info.DEVELOPER}\nWhere to download={version_info.PERMANENT_LOCATION}'
     print(info_string)
     messagebox.showinfo('', info_string)
 

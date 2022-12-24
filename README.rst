@@ -56,7 +56,7 @@ Conversion
 
 **Step 1.4** Repeat previous step to load as many prior periods as needed.
 
-**Step 1.5** Right click anywhere on the web page and select **Save as..**.
+**Step 1.5** After all needed previous periods are loaded, right click anywhere on the web page and select **Save as..**.
 
 .. image:: misc/chrome_save_as.png
    :alt: Chrome Save as
@@ -101,7 +101,7 @@ My antivirus program attacks the tool. What can I do?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Antivirus programs attempt to detect viruses based on the algorithms, known
 only to them. Very often an antivirus would block anything unknown and/or
-suspicious. At the same time most of antivirus manufactures allow the
+suspicious. At the same time most of antivirus manufactures allow a
 suspicious file to be sent to them for more detailed investigation, after
 successful completion of which they would white list the suspicious file in
 the next virus definitions update. As an example files for the Microsoft
