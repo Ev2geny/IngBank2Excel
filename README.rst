@@ -1,7 +1,7 @@
 .. raw:: html
-   <meta name="google-site-verification" content="wxRfmIrxtCMAk914PlUejPSaVnB2kT-dXQ5FvNLyMKs" />
-   
-<meta name="google-site-verification" content="wxRfmIrxtCMAk914PlUejPSaVnB2kT-dXQ5FvNLyMKs" />
+   <head>
+      <meta name="google-site-verification" content="wxRfmIrxtCMAk914PlUejPSaVnB2kT-dXQ5FvNLyMKs" />
+   </head>
 
 ==============
 IngBank2Excel
