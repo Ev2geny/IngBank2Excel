@@ -1,0 +1,172 @@
+<h1 id="ingbank2excel">IngBank2Excel</h1>
+<p>
+    Simple tool to create an Excel extract with the credit card transactions of
+    the <a href="https://www.ing.nl">ING Bank (Netherlands)</a>.
+</p>
+<p>
+    For whatever reason ING Bank
+    <a
+        href="https://www.ing.nl/particulier/betalen/creditcards/mijn-creditcard/meer-weten/creditcard-afschrift-lezen.html">does
+        not support</a>
+    any downloadable statements on the credit card transactions. Not even in PDF
+    format, not to mention the CSV or Excel formats. This is despite the fact,
+    that the functionality if definitely needed and has been requested from the
+    ING Bank several times (e.g. see
+    <a
+        href="https://www.facebook.com/INGnl/posts/waar-kan-ik-mijn-afschriften-van-de-ing-creditcard-downloaden/604751509571414/">facebook</a>
+    and
+    <a href="https://www.klacht.nl/downloaden-transactie-op-spaarrekening-en-creditcard-uitgaven/">klacht.nl</a>)
+</p>
+<p>
+    The <strong>IngBank2Excel</strong> (later in the text also referred to as
+    <strong>the tool</strong>) works around this limitation and allows to create
+    an Excel or CSV file with all credit card transactions, available through the
+    web interface of the ING bank.
+</p>
+<p><img src="assets/IngBank2Excel.PNG" alt="IngBank2Excel.PNG" /></p>
+<p><strong>Developer:</strong> ev2geny at gmail.com</p>
+<h2 id="how-to-use">How to use</h2>
+<h3 id="installation">Installation</h3>
+<ol>
+    <li>
+        Download
+        <a href="https://github.com/Ev2geny/IngBank2Excel/releases/latest">the latest version of the tool</a>
+    </li>
+    <li>
+        Unzip the file in a separate directory and locate
+        <code>IngBank2ExcelGUI.bat</code>
+    </li>
+</ol>
+<h3 id="conversion">Conversion</h3>
+<h4 id="-step-1-create-an-mhtml-file-from-web-page">
+    <strong>Step 1</strong> Create an .mhtml file from web page
+</h4>
+<p><strong>Step 1.1</strong> Login to the ING web with Google Chrome.</p>
+<p><strong>Step 1.2</strong> Navigate to the credit cards section.</p>
+<p><strong>Result:</strong> The current period will be shown.</p>
+<p>
+    <strong>Step 1.3</strong> If needed, click on the
+    <strong>Load previous period</strong> at the bottom.
+</p>
+<p>
+    <img src="assets/ING_credit_card_view_bleured.PNG" alt="ING credic card view" />
+</p>
+<p><strong>Result:</strong> The previous period will be loaded as well.</p>
+<p>
+    <strong>Step 1.4</strong> Repeat previous step to load as many prior periods
+    as needed.
+</p>
+<p>
+    <strong>Step 1.5</strong> After all needed previous periods are loaded, right
+    click anywhere on the web page and select <strong>Save as..</strong>.
+</p>
+<p><img src="assets/chrome_save_as.png" alt="Chrome Save as" /></p>
+<p>
+    <strong>Step 1.6</strong> Chose to save as a
+    <strong>Webpage, Single File (.mhtml)</strong>.
+</p>
+<p>
+    <img src="assets/chrome_select_file_type.png" alt="Chrome select file type" />
+</p>
+<p><strong>Step 1.7</strong> Give the file a meaningful name and save it.</p>
+<p>
+    <strong>Result:</strong> A file with the extension .mhtml will be created.
+</p>
+<h4 id="-step-2-convert-mhtml-to-excel">
+    <strong>Step 2</strong> Convert .mhtml to Excel
+</h4>
+<p>
+    <strong>Step 2.1</strong> Double click the <code>IngBank2ExcelGUI.bat</code>
+</p>
+<p>
+    <strong>Step 2.2</strong> On the GUI interface press the
+    <strong>Select</strong> button and select one or several .mhtml files, created
+    in the <strong>Step 1</strong>.
+</p>
+<p><strong>Step 2.3</strong> Press <strong>Convert Selected Files</strong></p>
+<p><strong>Result:</strong> .xlsx file(s) will be created</p>
+<p>
+    See also
+    <a href="#appendix-a.-using-the-tool-from-the-command-line">Appendix A. Using the tool from the command line</a>
+</p>
+<h2 id="faq">FAQ</h2>
+<h3 id="what-operating-system-can-the-tool-work-on-">
+    What Operating System can the tool work on?
+</h3>
+<ul>
+    <li>Windows starting from Windows 8.1 (does not work on Windows 7)</li>
+</ul>
+<p>
+    In theory the tool can also be used on the macOS and Linux, but at the moment
+    <a href="https://github.com/Ev2geny/IngBank2Excel/releases/latest">regular releases</a>
+    do not contain executable file for these OSs. One can either create such
+    executables for these OSs or run the tool on these OSs directly from Python.
+</p>
+<h3 id="my-antivirus-program-attacks-the-tool-what-can-i-do-">
+    My antivirus program attacks the tool. What can I do?
+</h3>
+<p>
+    Antivirus programs attempt to detect viruses based on the algorithms, known
+    only to them. Very often an antivirus would block anything unknown and/or
+    suspicious. At the same time most of antivirus manufactures allow a suspicious
+    file to be sent to them for more detailed investigation, after successful
+    completion of which they would white list the suspicious file in the next
+    virus definitions update. As an example files for the Microsoft Defender need
+    to be sent
+    <a href="https://www.microsoft.com/en-us/wdsi/filesubmission">here</a>, files
+    for the Symantec <a href="https://symsubmit.symantec.com/">here</a>. The
+    developer normally \&quot;agrees\&quot; the tool with at least Microsoft
+    Windows Defender.
+</p>
+<p>
+    So, if your antivirus does not like the <strong>IngBank2Excel</strong> there
+    are 2 options:
+</p>
+<ul>
+    <li>send the tool for investigation to the antivirus manufacturer</li>
+    <li>
+        inform the developer. The developer will need information about the
+        antivirus you are using
+    </li>
+</ul>
+<h2 id="feedback">Feedback</h2>
+<p>
+    For issues reporting and/or enhancement requests is best to use the
+    <a href="https://github.com/Ev2geny/IngBank2Excel/issues">github issues functionality</a>
+</p>
+<p>
+    For general subjects start a discussion
+    <a href="https://github.com/Ev2geny/IngBank2Excel/discussions">here</a>
+</p>
+<p>In any case you can always email the developer: ev2geny at gmail.com</p>
+<h2 id="appendix">Appendix</h2>
+<h3 id="appendix-a-using-the-tool-from-the-command-line">
+    Appendix A. Using the tool from the command line
+</h3>
+<p>
+    To use the tool from the command line one has to use
+    <a href="/core/IngBank2Excel.py">IngBank2Excel.py</a>
+</p>
+<pre><code><span class="hljs-attribute">usage</span>: IngBank2Excel.py [-h] [-o OUTPUT_EXCEL_FILE_NAME] [-f {ING_CREDIT}] [-t {xlsx,csv}] input_file_name
+
+<span class="applescript">Converting ING bank extracts <span class="hljs-keyword">to</span> Excel
+
+positional arguments:
+input_file_name       Input <span class="hljs-built_in">file</span> <span class="hljs-built_in">name</span> <span class="hljs-keyword">for</span> conversion
+
+options:
+-h, <span class="hljs-comment">--help            show this help message and exit</span>
+-o OUTPUT_EXCEL_FILE_NAME, <span class="hljs-comment">--output OUTPUT_EXCEL_FILE_NAME</span>
+                        Output <span class="hljs-built_in">file</span> <span class="hljs-built_in">name</span> (<span class="hljs-keyword">without</span> extension), which will be created <span class="hljs-keyword">in</span> excel <span class="hljs-keyword">or</span> CSV format
+-f {ING_CREDIT}, <span class="hljs-comment">--format {ING_CREDIT}</span>
+                        Format <span class="hljs-keyword">of</span> input <span class="hljs-built_in">file</span>. If <span class="hljs-keyword">not</span> provided, determined automatically
+-t {xlsx,csv}, <span class="hljs-comment">--type {xlsx,csv}</span>
+                        Format <span class="hljs-keyword">of</span> <span class="hljs-keyword">the</span> output <span class="hljs-built_in">file</span> <span class="hljs-keyword">to</span> be created</span>
+</code></pre>
+<p>
+    At the moment
+    <a href="https://github.com/Ev2geny/IngBank2Excel/releases/latest">regular releases</a>
+    do not contain executable <strong>IngBank2Excel</strong> file for command line
+    usage. One can either create such executable or run the tool directly from
+    Python.
+</p>
