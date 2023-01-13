@@ -47,7 +47,7 @@ How to use
 **Step 1.3** If needed, click on the **Load previous period** at the
 bottom.
 
-![ING credic card view](/misc/ING_credit_card_view_bleured.PNG)
+![ING credic card view](assets/ING_credit_card_view_bleured.PNG)
 
 **Result:** The previous period will be loaded as well.
 
@@ -57,11 +57,11 @@ needed.
 **Step 1.5** After all needed previous periods are loaded, right click
 anywhere on the web page and select **Save as..**.
 
-![Chrome Save as](/misc/chrome_save_as.png)
+![Chrome Save as](assets/chrome_save_as.png)
 
 **Step 1.6** Chose to save as a **Webpage, Single File (.mhtml)**.
 
-![Chrome select file type](/misc/chrome_select_file_type.png)
+![Chrome select file type](assets/chrome_select_file_type.png)
 
 **Step 1.7** Give the file a meaningful name and save it.
 
