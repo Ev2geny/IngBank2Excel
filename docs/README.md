@@ -1,10 +1,3 @@
-```{=html
-<embed>
-<head>
-<meta name="google-site-verification" content="wxRfmIrxtCMAk914PlUejPSaVnB2kT-dXQ5FvNLyMKs" />
-</head>
-</embed>}
-```
 IngBank2Excel
 =============
 
@@ -30,9 +23,6 @@ interface of the ING bank.
 
 **Developer:** ev2geny at gmail.com
 
-::: {.contents}
-**Contents**
-:::
 
 How to use
 ----------
