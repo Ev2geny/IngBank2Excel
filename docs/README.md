@@ -19,7 +19,7 @@ tool**) works around this limitation and allows to create an Excel or
 CSV file with all credit card transactions, available through the web
 interface of the ING bank.
 
-![IngBank2Excel.PNG](/misc/IngBank2Excel.PNG)
+![IngBank2Excel.PNG](../misc/IngBank2Excel.PNG)
 
 **Developer:** ev2geny at gmail.com
 
