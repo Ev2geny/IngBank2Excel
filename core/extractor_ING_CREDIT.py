@@ -2,6 +2,8 @@ import re
 from datetime import datetime
 import sys
 
+from typing import Iterator
+
 import bs4
 from bs4 import BeautifulSoup, Comment
 
@@ -11,27 +13,6 @@ from extractor import Extractor
 import extractors_generic
 
 from utils import get_text_from_tag
-
-
-def deconstruct_entry(entry:bs4.element.Tag)->dict:
-
-    res = {}
-    
-    #  <time datetime=3D"2022-08-27">
-    res['date']=entry.find("time").get("datetime")
-    # '3D"2022-07-20"' => '2022-07-20'
-    res['date'] = re.search(r'"(.*)"', res['date']).group(1)
-    res['date'] = datetime.strptime(res['date'], '%Y-%m-%d').date()
-
-    # <h5 class=3D"expandable-title">
-    res['title']=get_text_from_tag(entry.find(class_='3D"expandable-title"'))
-
-    # <strong class=3D"expandable-value">
-    res['value']=get_text_from_tag(entry.find(class_='3D"expandable-value"'))
-    res['value']=float(res['value'].replace(',',''))
-
-    return res
-
 
 class ING_CREDIT(Extractor):
 
@@ -60,17 +41,20 @@ class ING_CREDIT(Extractor):
         result = []
         soup = BeautifulSoup(self.bank_text, "html.parser")
 
-        periods = soup.find_all( re.compile(r"ing-feat-transaction-period-\d*"))
+        periods:Iterator[bs4.element.Tag] = soup.find_all( re.compile(r"ing-feat-transaction-period-\d*"))
 
         if len(periods) == 0:
             raise exceptions.InputFileStructureError("No accounting period is found")
 
+        # period:bs4.element.Tag
         for period in periods:
 
             period_name = get_text_from_tag(period.find('h2'))
 
             # <li class=3D"date-item">
-            date_items = period.find_all("li", class_='3D"date-item"')
+            date_items:Iterator[bs4.element.Tag] = period.find_all("li", class_='3D"date-item"')
+            
+            # data_item: bs4.element.Tag
             for date_item in date_items:
 
                 # Finding date
@@ -80,11 +64,11 @@ class ING_CREDIT(Extractor):
                 date = re.search(r'"(.*)"', date).group(1)
                 date = datetime.strptime(date, '%Y-%m-%d').date()
 
-                rows = date_item.find_all("div", class_= '3D"expandable-row"')
+                rows:Iterator[bs4.element.Tag] = date_item.find_all("div", class_= '3D"expandable-row"')
 
                 for row in rows:
                     # <h5 class=3D"expandable-title">
-                    title =get_text_from_tag(row.find(class_='3D"expandable-title"'))
+                    title = get_text_from_tag(row.find(class_='3D"expandable-title"'))
 
                     # <strong class=3D"expandable-value">
                     value = get_text_from_tag(row.find(class_='3D"expandable-value"'))
