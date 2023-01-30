@@ -41,6 +41,9 @@ class ING_CREDIT(Extractor):
         self.bank_text = self.bank_text.replace("=\n","")
         self.bank_text = self.bank_text.replace("=E2=88=92","-")
 
+        # with open("intermittent.html","w") as f:
+        #     f.write(self.bank_text)
+
     def check_specific_signatures(self):
         
         SIGNITURE_STRING = "ing-feat-agreement-details-credit-card"
@@ -66,13 +69,31 @@ class ING_CREDIT(Extractor):
 
             period_name = get_text_from_tag(period.find('h2'))
 
-            list_items = period.find_all("li", class_='3D"date-item"')
+            # <li class=3D"date-item">
+            date_items = period.find_all("li", class_='3D"date-item"')
+            for date_item in date_items:
 
-            for item in list_items:
-                entry = deconstruct_entry(item)
-                # adding period name for every entry
-                entry['period_name'] = period_name
-                result.append(entry)
+                # Finding date
+                #  <time datetime=3D"2022-08-27">
+                date = date_item.find("time").get("datetime")
+                # '3D"2022-07-20"' => '2022-07-20'
+                date = re.search(r'"(.*)"', date).group(1)
+                date = datetime.strptime(date, '%Y-%m-%d').date()
+
+                rows = date_item.find_all("div", class_= '3D"expandable-row"')
+
+                for row in rows:
+                    # <h5 class=3D"expandable-title">
+                    title =get_text_from_tag(row.find(class_='3D"expandable-title"'))
+
+                    # <strong class=3D"expandable-value">
+                    value = get_text_from_tag(row.find(class_='3D"expandable-value"'))
+                    value = float(value.replace(',',''))
+
+                    result.append({"period_name":period_name, 
+                                    "date":date,
+                                    "title":title,
+                                    "value":value})
 
         if len(result) == 0:
             raise exceptions.InputFileStructureError("No single entry is found in any of the periods")
