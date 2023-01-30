@@ -1,10 +1,3 @@
-.. raw:: html
-   <embed>
-      <head>
-         <meta name="google-site-verification" content="wxRfmIrxtCMAk914PlUejPSaVnB2kT-dXQ5FvNLyMKs" />
-      </head>
-   </embed>
-
 ==============
 IngBank2Excel
 ==============
