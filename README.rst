@@ -34,7 +34,7 @@ Installation
 ~~~~~~~~~~~~~
 
 1. Download `the latest version of the tool <https://github.com/Ev2geny/IngBank2Excel/releases/latest>`_
-2. Unzip the file in a separate directory and locate ``IngBank2ExcelGUI.bat``
+2. Unzip the file in a separate directory and locate ``IngBank2ExcelGUI.exe``
 
 Conversion
 ~~~~~~~~~~~
@@ -74,7 +74,7 @@ Conversion
 **Step 2** Convert .mhtml to Excel
 ```````````````````````````````````
 
-**Step 2.1** Double click the ``IngBank2ExcelGUI.bat``
+**Step 2.1** Double click the ``IngBank2ExcelGUI.exe``
 
 **Step 2.2** On the GUI interface press the **Select** button and select one or
 several .mhtml files, created in the **Step 1**.
