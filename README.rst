@@ -6,7 +6,7 @@ Simple tool to create an Excel extract with the credit card transactions of the
 `ING Bank (Netherlands) <https://www.ing.nl>`_.
 
 For whatever reason ING Bank `does not support
-<https://www.ing.nl/particulier/betalen/creditcards/mijn-creditcard/meer-weten/creditcard-afschrift-lezen.html>`_
+<https://www.ing.nl/particulier/betalen/creditcards/creditcard-afschrift-lezen#:~:text=Op%20dit%20moment%20is%20het,van%20een%20creditcard%20afschrift%20opvragen.>`_
 any downloadable statements on the credit card transactions. Not even in PDF
 format, not to mention the CSV or Excel formats. This is despite the fact, that
 the functionality if definitely needed and has been requested from the ING Bank
