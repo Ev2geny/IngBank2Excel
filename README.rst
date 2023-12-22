@@ -45,14 +45,14 @@ Conversion
 
 **Step 1.2** Navigate to the credit cards section.
 
-**Result:**  The current period will be shown.
+    **Result:**  The current period will be shown.
 
 **Step 1.3** If needed, click on the **Load previous period** at the bottom.
 
 .. image:: misc/ING_credit_card_view_bleured.PNG
    :alt: ING credic card view
 
-**Result:**  The previous period will be loaded as well.
+    **Result:**  The previous period will be loaded as well.
 
 **Step 1.4** Repeat previous step to load as many prior periods as needed.
 
@@ -81,7 +81,7 @@ several .mhtml files, created in the **Step 1**.
 
 **Step 2.3** Press **Convert Selected Files**
 
-**Result:**  .xlsx file(s) will be created
+    **Result:**  .xlsx file(s) will be created
 
 See also `Appendix A. Using the tool from the command line`_
 
