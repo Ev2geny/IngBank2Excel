@@ -69,7 +69,7 @@ Conversion
 
 **Step 1.7** Give the file a meaningful name and save it.
 
-**Result:**  A file with the extension .mhtml will be created.
+    **Result:**  A file with the extension .mhtml will be created.
 
 **Step 2** Convert .mhtml to Excel
 ```````````````````````````````````
