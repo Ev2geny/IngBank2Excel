@@ -43,11 +43,16 @@ Conversion
 ```````````````````````````````````````````````
 **Step 1.1** Login to the ING web with Google Chrome.
 
-**Step 1.2** Navigate to the credit cards section.
+**Step 1.2** Switch to the English version of the interface. (Don't skit this step, otherwise the data will not be converted correctly)
+
+.. image:: misc/switching_to_English.png
+   :alt: Switching to English interface
+
+**Step 1.3** Navigate to the credit cards section.
 
 **Result:**  The current period will be shown.
 
-**Step 1.3** If needed, click on the **Load previous period** at the bottom.
+**Step 1.4** If needed, click on the **Load previous period** at the bottom.
 
 .. image:: misc/ING_credit_card_view_bleured.PNG
    :alt: ING credic card view
