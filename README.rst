@@ -43,7 +43,7 @@ Conversion
 ```````````````````````````````````````````````
 **Step 1.1** Login to the ING web with Google Chrome.
 
-**Step 1.2** Switch to the English version of the interface. (Don't skit this step, otherwise the data will not be converted correctly)
+**Step 1.2** Switch to the English version of the interface. (Don't skip this step, otherwise the data will not be converted correctly)
 
 .. image:: misc/switching_to_English.png
    :alt: Switching to English interface
