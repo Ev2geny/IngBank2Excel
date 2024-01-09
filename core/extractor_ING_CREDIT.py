@@ -1,6 +1,7 @@
 import re
 from datetime import datetime
 import sys
+from decimal import Decimal
 
 from typing import Iterator
 
@@ -72,7 +73,7 @@ class ING_CREDIT(Extractor):
 
                     # <strong class=3D"expandable-value">
                     value = get_text_from_tag(row.find(class_='3D"expandable-value"'))
-                    value = float(value.replace(',',''))
+                    value = Decimal(value.replace(',',''))
 
                     result.append({"period_name":period_name, 
                                     "date":date,
