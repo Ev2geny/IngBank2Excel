@@ -6,7 +6,7 @@ Simple tool to create an Excel extract with the credit card transactions of the
 `ING Bank (Netherlands) <https://www.ing.nl>`_.
 
 For whatever reason ING Bank `does not support
-<https://www.ing.nl/particulier/betalen/creditcards/mijn-creditcard/meer-weten/creditcard-afschrift-lezen.html>`_
+<https://www.ing.nl/particulier/betalen/creditcards/creditcard-afschrift-lezen#:~:text=Op%20dit%20moment%20is%20het,van%20een%20creditcard%20afschrift%20opvragen.>`_
 any downloadable statements on the credit card transactions. Not even in PDF
 format, not to mention the CSV or Excel formats. This is despite the fact, that
 the functionality if definitely needed and has been requested from the ING Bank
@@ -50,14 +50,14 @@ Conversion
 
 **Step 1.3** Navigate to the credit cards section.
 
-**Result:**  The current period will be shown.
+    **Result:**  The current period will be shown.
 
 **Step 1.4** If needed, click on the **Load previous period** at the bottom.
 
 .. image:: misc/ING_credit_card_view_bleured.PNG
    :alt: ING credic card view
 
-**Result:**  The previous period will be loaded as well.
+    **Result:**  The previous period will be loaded as well.
 
 **Step 1.4** Repeat previous step to load as many prior periods as needed.
 
@@ -74,7 +74,7 @@ Conversion
 
 **Step 1.7** Give the file a meaningful name and save it.
 
-**Result:**  A file with the extension .mhtml will be created.
+    **Result:**  A file with the extension .mhtml will be created.
 
 **Step 2** Convert .mhtml to Excel
 ```````````````````````````````````
@@ -86,7 +86,7 @@ several .mhtml files, created in the **Step 1**.
 
 **Step 2.3** Press **Convert Selected Files**
 
-**Result:**  .xlsx file(s) will be created
+    **Result:**  .xlsx file(s) will be created
 
 See also `Appendix A. Using the tool from the command line`_
 
