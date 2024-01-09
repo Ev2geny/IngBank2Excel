@@ -61,7 +61,7 @@ Conversion
 
 **Step 1.5** Repeat previous step to load as many prior periods as needed.
 
-**Step 1.5** After all needed previous periods are loaded, right click anywhere on the web page and select **Save as..**.
+**Step 1.6** After all needed previous periods are loaded, right click anywhere on the web page and select **Save as..**.
 
 .. image:: misc/chrome_save_as.png
    :alt: Chrome Save as
