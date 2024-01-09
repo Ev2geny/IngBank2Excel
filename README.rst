@@ -59,7 +59,7 @@ Conversion
 
     **Result:**  The previous period will be loaded as well.
 
-**Step 1.4** Repeat previous step to load as many prior periods as needed.
+**Step 1.5** Repeat previous step to load as many prior periods as needed.
 
 **Step 1.5** After all needed previous periods are loaded, right click anywhere on the web page and select **Save as..**.
 
@@ -67,12 +67,12 @@ Conversion
    :alt: Chrome Save as
 
 
-**Step 1.6** Chose to save as a **Webpage, Single File (.mhtml)**.
+**Step 1.7** Chose to save as a **Webpage, Single File (.mhtml)**.
 
 .. image:: misc/chrome_select_file_type.png
    :alt: Chrome select file type
 
-**Step 1.7** Give the file a meaningful name and save it.
+**Step 1.8** Give the file a meaningful name and save it.
 
     **Result:**  A file with the extension .mhtml will be created.
 
