@@ -2,6 +2,7 @@ import re
 from datetime import datetime
 import sys
 from decimal import Decimal
+from pprint import pprint
 
 from typing import Iterator
 
@@ -60,10 +61,22 @@ class ING_CREDIT(Extractor):
 
             period_total_claculated = Decimal('0')
             
-            period_totals_header=period.find(class_="statement-totals-description-list")
+            # period_totals_header=period.find("dl", class_="statement-totals-description-list")
+            # period_totals_header=period.find("dl", {"class": "statement-totals-description-list"})
+            
+            period_totals_header=period.find("dl")
+            
+            
             
             if period_totals_header:
-                print(period_totals_header)
+                
+                description_pairs_dict = {}
+                description_pairs:Iterator[bs4.element.Tag] = period_totals_header.find_all("div")
+                for pair in description_pairs:
+                    description_pairs_dict[get_text_from_tag(pair.find("dt"))] = get_text_from_tag(pair.find("dd"))
+                    
+                pprint(description_pairs_dict)
+                
             else:
                 print("No totals header")
 
