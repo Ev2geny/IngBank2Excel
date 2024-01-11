@@ -89,7 +89,7 @@ def get_number_from_text(input_text:str)->Decimal:
                                 re.VERBOSE    )
     
     if not number_pattern.match(input_text):
-        raise exceptions.InputFileStructureError(f"Error when trying to convert the text '{input_text}' to a number.\n The text doesn't match the expected pattern of at least one digit (optionally preceeded by a minus sign with optional digits with thousand separator), followed by a decimal separator'.' followed by 2 digits.\nMake sure you swtched to English version of the Web page, before downloading the web archive file")
+        raise exceptions.InputFileStructureError(f"Error when trying to convert the text '{input_text}' to a number.\n The text doesn't match the expected pattern of at least one digit (optionally preceeded by a minus sign with optional digits with thousand separator ','), followed by a decimal separator'.' followed by 2 digits.\n E.g. '3.99' or '-1,000.25' \nMake sure you swtched to English version of the Web page, before downloading the web archive file")
 
     
     return Decimal(input_text.replace(',',''))

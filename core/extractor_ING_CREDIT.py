@@ -13,7 +13,7 @@ import exceptions
 from extractor import Extractor
 import extractors_generic
 
-from utils import get_text_from_tag
+from utils import get_text_from_tag, get_number_from_text
 
 class ING_CREDIT(Extractor):
 
@@ -43,18 +43,33 @@ class ING_CREDIT(Extractor):
         soup = BeautifulSoup(self.bank_text, "html.parser")
 
         periods:Iterator[bs4.element.Tag] = soup.find_all( re.compile(r"ing-feat-transaction-period-\d*"))
+        
 
         if len(periods) == 0:
             raise exceptions.InputFileStructureError("No accounting period is found")
 
         # period:bs4.element.Tag
         for period in periods:
+            
+            # print(period)
 
             period_name = get_text_from_tag(period.find('h2'))
+            
+            print(f"Period name: {period_name}")
+
+
+            period_total_claculated = Decimal('0')
+            
+            period_totals_header=period.find(class_="statement-totals-description-list")
+            
+            if period_totals_header:
+                print(period_totals_header)
+            else:
+                print("No totals header")
 
             # <li class=3D"date-item">
             date_items:Iterator[bs4.element.Tag] = period.find_all("li", class_='3D"date-item"')
-            
+                        
             # data_item: bs4.element.Tag
             for date_item in date_items:
 
@@ -65,20 +80,23 @@ class ING_CREDIT(Extractor):
                 date = re.search(r'"(.*)"', date).group(1)
                 date = datetime.strptime(date, '%Y-%m-%d').date()
 
-                rows:Iterator[bs4.element.Tag] = date_item.find_all("div", class_= '3D"expandable-row"')
+                transactions:Iterator[bs4.element.Tag] = date_item.find_all("div", class_= '3D"expandable-row"')
 
-                for row in rows:
+                for transaction in transactions:
                     # <h5 class=3D"expandable-title">
-                    title = get_text_from_tag(row.find(class_='3D"expandable-title"'))
+                    title = get_text_from_tag(transaction.find(class_='3D"expandable-title"'))
 
                     # <strong class=3D"expandable-value">
-                    value = get_text_from_tag(row.find(class_='3D"expandable-value"'))
-                    value = Decimal(value.replace(',',''))
+                    value_txt = get_text_from_tag(transaction.find(class_='3D"expandable-value"'))
+                    value_dec = get_number_from_text(value_txt)
+                    value_float = float(value_dec)
+                    
+                    period_total_claculated += value_dec
 
                     result.append({"period_name":period_name, 
                                     "date":date,
                                     "title":title,
-                                    "value":value})
+                                    "value":value_float})
 
         if len(result) == 0:
             raise exceptions.InputFileStructureError("No single entry is found in any of the periods")
