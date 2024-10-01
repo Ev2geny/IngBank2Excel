@@ -17,6 +17,7 @@ def get_text_from_tag(tag:bs4.element.Tag)->str:
     More problem description is here https://stackoverflow.com/a/20754362/4432107
     """
     text = " ".join(tag.find_all(text=lambda t: not isinstance(t, Comment)))
+    text = text.strip()
     return text
 
 def rename_sort_df(df:pd.DataFrame, columns_info:dict)->pd.DataFrame:
