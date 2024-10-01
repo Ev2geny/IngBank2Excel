@@ -6,7 +6,7 @@ Simple tool to create an Excel extract with the credit card transactions of the
 `ING Bank (Netherlands) <https://www.ing.nl>`_.
 
 For whatever reason ING Bank `does not support
-<https://www.ing.nl/particulier/betalen/creditcards/mijn-creditcard/meer-weten/creditcard-afschrift-lezen.html>`_
+<https://www.ing.nl/particulier/betalen/creditcards/creditcard-afschrift-lezen#:~:text=Op%20dit%20moment%20is%20het,van%20een%20creditcard%20afschrift%20opvragen.>`_
 any downloadable statements on the credit card transactions. Not even in PDF
 format, not to mention the CSV or Excel formats. This is despite the fact, that
 the functionality if definitely needed and has been requested from the ING Bank
@@ -34,7 +34,7 @@ Installation
 ~~~~~~~~~~~~~
 
 1. Download `the latest version of the tool <https://github.com/Ev2geny/IngBank2Excel/releases/latest>`_
-2. Unzip the file in a separate directory and locate ``IngBank2ExcelGUI.bat``
+2. Unzip the file in a separate directory and locate ``IngBank2ExcelGUI.exe``
 
 Conversion
 ~~~~~~~~~~~
@@ -43,45 +43,50 @@ Conversion
 ```````````````````````````````````````````````
 **Step 1.1** Login to the ING web with Google Chrome.
 
-**Step 1.2** Navigate to the credit cards section.
+**Step 1.2** Switch to the English version of the interface. (Don't skip this step, otherwise the data will not be converted correctly)
 
-**Result:**  The current period will be shown.
+.. image:: misc/switching_to_English.png
+   :alt: Switching to English interface
 
-**Step 1.3** If needed, click on the **Load previous period** at the bottom.
+**Step 1.3** Navigate to the credit cards section.
+
+    **Result:**  The current period will be shown.
+
+**Step 1.4** If needed, click on the **Load previous period** at the bottom.
 
 .. image:: misc/ING_credit_card_view_bleured.PNG
    :alt: ING credic card view
 
-**Result:**  The previous period will be loaded as well.
+    **Result:**  The previous period will be loaded as well.
 
-**Step 1.4** Repeat previous step to load as many prior periods as needed.
+**Step 1.5** Repeat previous step to load as many prior periods as needed.
 
-**Step 1.5** After all needed previous periods are loaded, right click anywhere on the web page and select **Save as..**.
+**Step 1.6** After all needed previous periods are loaded, right click anywhere on the web page and select **Save as..**.
 
 .. image:: misc/chrome_save_as.png
    :alt: Chrome Save as
 
 
-**Step 1.6** Chose to save as a **Webpage, Single File (.mhtml)**.
+**Step 1.7** Chose to save as a **Webpage, Single File (.mhtml)**.
 
 .. image:: misc/chrome_select_file_type.png
    :alt: Chrome select file type
 
-**Step 1.7** Give the file a meaningful name and save it.
+**Step 1.8** Give the file a meaningful name and save it.
 
-**Result:**  A file with the extension .mhtml will be created.
+    **Result:**  A file with the extension .mhtml will be created.
 
 **Step 2** Convert .mhtml to Excel
 ```````````````````````````````````
 
-**Step 2.1** Double click the ``IngBank2ExcelGUI.bat``
+**Step 2.1** Double click the ``IngBank2ExcelGUI.exe``
 
 **Step 2.2** On the GUI interface press the **Select** button and select one or
 several .mhtml files, created in the **Step 1**.
 
 **Step 2.3** Press **Convert Selected Files**
 
-**Result:**  .xlsx file(s) will be created
+    **Result:**  .xlsx file(s) will be created
 
 See also `Appendix A. Using the tool from the command line`_
 
