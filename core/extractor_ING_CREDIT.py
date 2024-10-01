@@ -42,7 +42,7 @@ class ING_CREDIT(Extractor):
         result = []
         soup = BeautifulSoup(self.bank_text, "html.parser")
 
-        periods:Iterator[bs4.element.Tag] = soup.find_all( re.compile(r"ing-feat-transaction-period-\d*"))
+        periods:Iterator[bs4.element.Tag] = soup.find_all( re.compile(r"ing-feat-transaction-period"))
 
         if len(periods) == 0:
             raise exceptions.InputFileStructureError("No accounting period is found")
@@ -97,7 +97,7 @@ if __name__ == '__main__':
 
 
     if len(sys.argv) < 2:
-        print('Input file is not specifyed')
+        print('Input file is not specified')
         print(__doc__)
 
     else:
