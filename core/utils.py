@@ -72,9 +72,4 @@ def write_df_to_file(df:pd.DataFrame,
 
         print_message_about_file_creation(filename)
     else:
-        raise exceptions.UserInputError(f"not supported output file format '{output_file_format}' is given to the function 'write_df_to_file'")
- 
-if __name__ == '__main__':
-    print(get_number_from_text("1000.00"))
-    print(get_number_from_text("-1000.00"))
-    
+        raise exceptions.UserInputError(f"not supported output file format '{output_file_format}' is gven to the function 'write_df_to_file'")
