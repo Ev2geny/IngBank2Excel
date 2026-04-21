@@ -19,6 +19,8 @@ The **IngBank2Excel**  (later in the text also referred to as **the tool**)
 works around this limitation and allows to create an Excel
 or CSV file with all credit card transactions, available through the web interface of the ING bank.
 
+**Note:** the tool works on the offline copy of the web page, which you create yourself and hence does not get any access to your bank account!
+
 .. image:: misc/IngBank2Excel.PNG
    :alt: IngBank2Excel.PNG
 
